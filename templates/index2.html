@@ -1,0 +1,19 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hi, {{ user.username }}!</h1>
+        {% for drug in drugs %}
+        <div>
+            <li></li><b>{{drug.name}}</b></div>li>
+            <li> Target: {{ drug.target }}</li>
+            <li> Action: {{ drug.action }}</li>
+        </div>
+        {% endfor %}
+    </body>
+</html>
