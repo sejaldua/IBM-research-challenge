@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PAWsome Careers!</title>
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+</head>
+<style>
+	.pretty_header{font-family: 'Crimson Text', serif; font-size: 14px }
+	.pretty_header1{font-family: 'Lora', serif;}
+</style>
+	<body>
+		<h1 class = "pretty_header1">Does this title directly describe the treatment of cancer, not the impact on side effects or the risk of developing cancer?</h2>
+			<form >
+				<h1 class = "pretty_header" > Relevant:</h1>
+				<div id="test">
+				<INPUT TYPE = "radio" name = "q" value = "yes"> Yes<br>
+				<INPUT TYPE = "radio" name = "q" value = "no">No<br><br>
+				</div>
+				<div id = "myform" hidden>
+					DRUG: <input type = "text" name = "Drug" ><br>
+					CANCER: <input type = "cancer" name = "cancer" ><br>
+					THERAPEUTIC ASSOCIATION: <input type = "thera" name = "thera" ><br>
+					STUDY TYPE: PRECLINICAL IN VITRA : <input type = "study" name = "study" ><br>
+				</div>
+				<script>
+				document.getElementById("myform").style.display = 'none'
+				document.getElementById('test').onclick = function() {
+				if( document.getElementsByName('q')[0].checked)
+					{
+						document.getElementById("myform").style.display = 'block'
+					} else {
+						document.getElementById("myform").style.display = 'none'
+					}
+					}
+				</script>
+				
+
+				<input type="submit" value="Submit">
+			</form>
+	</body>
+</html>
+ 		
+	
