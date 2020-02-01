@@ -27,6 +27,10 @@ def allen_cleanup(abstract):
 def classify_study_type(text):
     '''decision function for using classification rules and AllenNLP together'''
 
+    # words that indicate one study type or another
+    # NOTE: due to lack of domain expertise, we do not know which biomedical
+    # terms are used to denote in vitro studies, but some words we considered were
+    # "assay" and "cell lines"
     vivo_checks = ["mouse", "mice", "rat", "rats", "animal","vivo"]
     vitro_checks = ["vitro"]
 
@@ -43,6 +47,7 @@ def classify_study_type(text):
             if word in words:
                 vitro_count+=1
 
+    # cases which clearly indicate the abstract involves one study type or another
     if vivo_count == 0 and vitro_count > 0:
         ans = "vitro"
     elif vivo_count > 0 and vitro_count == 0:
@@ -51,6 +56,8 @@ def classify_study_type(text):
         ans = "vivo"
     elif vitro_count - vivo_count >= 3:
         ans = "vitro"
+
+    # do further discriminating via API query with pretrained NLP model
     else:
         ans = allen_cleanup(text) 
 

@@ -7,14 +7,9 @@ predictor = Predictor.from_path("https://storage.googleapis.com/allennlp-public-
 
 
 def find_drug_name(abstract):
+	''' Query Allen NLP API reading comprehension to discern drug name via pre-trained model. '''
+	
 	answers=predictor.predict(passage=abstract,question='What is the drug name?')
 	drug_name=answers['best_span_str']
-	print("Drug Name:",drug_name)
-
-
-
-df = pd.read_csv('clean_docs_50_complete_share.csv')
-for index,row in df.iterrows():
-	abstract_val=row['abstract']
-	find_drug_name(abstract_val)
+	return drug_name
 
