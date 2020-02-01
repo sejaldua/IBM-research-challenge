@@ -19,5 +19,5 @@ def identify_cancer(title, abstract):
   doc = nlp(title)
   query_list = list(doc.ents)
   query_list = [str(w) for w in query_list]
-  query_str = "Of " + " ".join(query_list) + " , which cancer?"
+  query_str = "Of " + " ".join(query_list) + " , which is a cancer?"
   return find_cancer_type(df['abstract'][i], query_str))
