@@ -44,12 +44,13 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 ![Demo 2](demos/working_demo2.gif)
 
 ## Future Directions
->* color code the confidence values of network predictions 
->* hover over biomedical jargon for simplified definition (e.g. apoptosis --> cell death)
->* underline keywords to draw attention to themes that help inform the reader to answer the questions
->* integrate saved responses with mongo DB database
->* clean data better (e.g. filter out for artifacts and section titles like "BACKGROUND")
->* be able to handle more complex therapeutic association classification than just binary (e.g. effective, no effect, inconclusive, detrimental)
->* evaluate success of machine learning models with user input
->* spend more time on bonus problem using neural net / `tdidf`
+* offer a textbook for the user to paste a scientific abstract from PubMed
+* color code the confidence values of network predictions 
+* hover over biomedical jargon for simplified definition (e.g. apoptosis --> cell death)
+* underline keywords to draw attention to themes that help inform the reader to answer the questions
+* integrate saved responses with mongo DB database
+* clean data better (e.g. filter out for artifacts and section titles like "BACKGROUND")
+* be able to handle more complex therapeutic association classification than just binary (e.g. effective, no effect, inconclusive, detrimental)
+* evaluate success of machine learning models with user input
+* spend more time on bonus problem using neural net / `tdidf`
 
