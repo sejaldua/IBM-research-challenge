@@ -1,0 +1,169 @@
+Acute Lymphoblastic Leukemia
+Acute Myeloid Leukemia
+Adolescents, Cancer in
+Adrenocortical Carcinoma
+AIDS-Related Cancers
+Kaposi Sarcoma
+AIDS-Related Lymphoma
+Primary CNS Lymphoma
+Anal Cancer
+Appendix Cancer - see Gastrointestinal Carcinoid Tumors
+Astrocytomas, Childhood
+Atypical Teratoid/Rhabdoid Tumor
+Basal Cell Carcinoma
+Bile Duct Cancer
+Bladder Cancer
+Brain Tumors
+Breast Cancer
+Bronchial Tumors
+Burkitt Lymphoma - see Non-Hodgkin Lymphoma
+Carcinoid Tumor (Gastrointestinal)
+Carcinoma of Unknown Primary
+Cardiac (Heart) Tumors, Childhood
+Central Nervous System
+Atypical Teratoid/Rhabdoid Tumor
+Medulloblastoma and Other CNS Embryonal Tumors
+Germ Cell Tumor, Childhood
+Primary CNS Lymphoma
+Cervical Cancer
+Cholangiocarcinoma
+Chordoma, Childhood
+Chronic Lymphocytic Leukemia
+Chronic Myelogenous Leukemia
+Chronic Myeloproliferative Neoplasms
+Colorectal Cancer
+Craniopharyngioma, Childhood
+Cutaneous T-Cell Lymphoma - see Lymphoma (Mycosis Fungoides and Sézary Syndrome)
+Ductal Carcinoma In Situ
+Embryonal Tumors
+Endometrial Cancer
+Ependymoma
+Esophageal Cancer
+Esthesioneuroblastoma
+Ewing Sarcoma
+Extracranial Germ Cell Tumor, Childhood
+Extragonadal Germ Cell Tumor
+Eye Cancer
+Intraocular Melanoma
+Retinoblastoma
+Fallopian Tube Cancer
+Fibrous Histiocytoma of Bone, Malignant, and Osteosarcoma
+Gallbladder Cancer
+Gastric (Stomach) Cancer
+Gastrointestinal Carcinoid Tumor
+Gastrointestinal Stromal Tumors
+Germ Cell Tumors
+Childhood Central Nervous System Germ Cell Tumors
+Childhood Extracranial Germ Cell Tumors
+Extragonadal Germ Cell Tumors
+Ovarian Germ Cell Tumors
+Testicular Cancer
+Gestational Trophoblastic Disease
+Hairy Cell Leukemia
+Head and Neck Cancer
+Heart Tumors, Childhood
+Hepatocellular (Liver) Cancer
+Histiocytosis, Langerhans Cell
+Hodgkin Lymphoma
+Hypopharyngeal Cancer
+Intraocular Melanoma
+Islet Cell Tumors, Pancreatic Neuroendocrine Tumors
+Kaposi Sarcoma
+Kidney (Renal Cell) Cancer
+Langerhans Cell Histiocytosis
+Laryngeal Cancer
+Leukemia
+Lip and Oral Cavity Cancer
+Liver Cancer
+Lung Cancer
+Lymphoma
+Male Breast Cancer
+Malignant Fibrous Histiocytoma of Bone and Osteosarcoma
+Melanoma
+Melanoma, Intraocular
+Merkel Cell Carcinoma
+Mesothelioma, Malignant
+Metastatic Cancer
+Metastatic Squamous Neck Cancer with Occult Primary (Head and Neck Cancer)
+Midline Tract Carcinoma With NUT Gene Changes
+Mouth Cancer
+Multiple Endocrine Neoplasia Syndromes
+Multiple Myeloma/Plasma Cell Neoplasms
+Mycosis Fungoides
+Myelodysplastic Syndromes, Myelodysplastic/Myeloproliferative Neoplasms
+Myelogenous Leukemia, Chronic
+Myeloid Leukemia, Acute
+Myeloproliferative Neoplasms, Chronic
+Nasal Cavity and Paranasal Sinus Cancer
+Nasopharyngeal Cancer
+Neuroblastoma
+Non-Hodgkin Lymphoma
+Non-Small Cell Lung Cancer
+Oral Cancer, Lip and Oral Cavity Cancer and Oropharyngeal Cancer
+Osteosarcoma and Malignant Fibrous Histiocytoma of Bone
+Ovarian Cancer
+Pancreatic Cancer
+Pancreatic Neuroendocrine Tumors
+Islet Cell Tumors
+Papillomatosis
+Childhood Laryngeal
+Paraganglioma
+Paranasal Sinus and Nasal Cavity Cancer
+Parathyroid Cancer
+Penile Cancer
+Pharyngeal Cancer
+Pheochromocytoma
+Pituitary Tumor
+Plasma Cell Neoplasm/Multiple Myeloma
+Pleuropulmonary Blastoma
+Lung cancer
+Pregnancy and Breast Cancer
+Primary Central Nervous SystemLymphoma
+Primary Peritoneal Cancer
+Prostate Cancer
+Rectal Cancer
+Recurrent Cancer
+Renal Cell (Kidney) Cancer
+Retinoblastoma
+Rhabdomyosarcoma
+Salivary Gland Cancer
+Sarcoma
+Childhood Rhabdomyosarcoma
+Childhood Vascular Tumors
+Ewing Sarcoma
+Kaposi Sarcoma
+Soft Tissue Sarcoma
+Osteosarcoma
+Bone Cancer
+Soft Tissue Sarcoma
+Uterine Sarcoma
+Sézary Syndrome
+Lymphoma
+Skin Cancer
+Small Cell Lung Cancer
+Small Intestine Cancer
+Soft Tissue Sarcoma
+Squamous Cell Carcinoma of the Skin - see Skin Cancer
+Squamous Neck Cancer with Occult Primary, Metastatic
+Stomach Cancer
+Gastric Cancer
+T-Cell Lymphoma
+Testicular Cancer
+Throat Cancer
+Nasopharyngeal Cancer
+Oropharyngeal Cancer
+Hypopharyngeal Cancer
+Thymoma and Thymic Carcinoma
+Thyroid Cancer
+Tracheobronchial Tumors
+Transitional Cell Cancer of the Renal Pelvis and Ureter (Kidney (Renal Cell) Cancer)
+Unknown Primary, Carcinoma of
+Unusual Cancers of Childhood
+Ureter and Renal Pelvis, Transitional Cell Cancer (Kidney (Renal Cell) Cancer
+Urethral Cancer
+Uterine Cancer
+Uterine Sarcoma
+Vaginal Cancer
+Vascular Tumors
+Vulvar Cancer
+Wilms Tumor

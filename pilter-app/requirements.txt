@@ -1,0 +1,11 @@
+django
+gunicorn
+django-heroku
+pandas
+numpy
+allennlp
+Flask
+flask_wtf
+matplotlib
+nltk
+re

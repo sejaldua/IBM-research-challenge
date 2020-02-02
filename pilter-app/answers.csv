@@ -1,0 +1,14 @@
+drug_name,cancer_name,thera_name,study_name
+Zinc Ionophore,prostate cancer,Effective,pre-clinical in-vivo
+dapagliflozin,rats,Effective,pre-clinical in-vivo
+deferasirox,cancer cells of iron,Effective,pre-clinical in-vitro
+docetaxel,,Effective,pre-clinical in-vitro
+docetaxel,,Effective,pre-clinical in-vitro
+docetaxel,BACKGROUND,Effective,pre-clinical in-vitro
+celecoxib,gastric cancer cells,Effective,pre-clinical in-vivo
+Mebendazole,"the treatment of malignant meningioma. The mechanism of action for this combination may include an increase in apoptosis, a reduction in proliferation and angiogenesis",Detrimental,pre-clinical in-vitro
+Candesartan,liver cancer,No Effect,pre-clinical in-vivo
+,,Effective,pre-clinical in-vivo
+deferasirox,cancer cells of iron,Effective,pre-clinical in-vivo
+,,Effective,pre-clinical in-vivo
+,,Effective,pre-clinical in-vivo

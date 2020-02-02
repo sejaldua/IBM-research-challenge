@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    </head>
+
+<style>
+.nav {
+  background-color: #98969c;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+</style>
+
+<ul class="nav">
+    <br>
+    <img src="https://sejaldua.com/images/logo.png" width="200" height="100">
+    <br>
+</ul>
+
+    <style>
+        .box {
+            float: left;
+            margin: 15px;
+        }
+        div.a
+	    {
+		border-radius: 25px ;
+		background-color: lightgrey;
+		word-wrap: break-word ;
+		padding: 50px;
+		margin: 10px;
+		height: 100px;
+		overflow: scroll;
+	}
+	::-webkit-scrollbar
+	{
+	width: 12px;
+	height: 12px;
+	}
+	::-webkit-scrollbar-thumb
+	{
+		border-radius: 10px;
+		background: #ccc;
+	}
+	::-webkit-scrollbar-track
+	{
+	background: #f5f5f5;
+	border-radius: 10px;
+	}
+    </style>
+
+    <style>
+        #maincard {
+            font-family: 'Questrial', sans-serif;
+            margin-top: 30px;
+            margin-left: 20%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          border-radius: 25px;
+          background: #8f8fad;
+          padding: 20px;
+          width: 800px;
+          height: 1000px;
+        }
+
+    </style>
+
+    <style>
+        span.papercard {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+            display: inline-block;
+          text-align: center;
+            margin-top: 30px;
+			margin-left: 15%;
+            margin-bottom: 15px;
+            padding-left: 10%;
+			padding-right: 10%;
+			padding-top: 30px;
+			padding-bottom: 30px;
+            font-family: 'Questrial', sans-serif;
+            background-color: white;
+        }
+</style>
+
+<body>
+
+
+
+<div id="maincard">
+    <div class="a">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+
+			var x=0;
+			var titles=0;
+			var abs =0;
+			var cancer =0;
+			var drug =0;
+			var thera=0;
+			var study=0;
+
+			$(function() {
+			  console.log("HIIIIII"+x)
+			  $('a#process_input').bind('click', function() {
+					$.getJSON('/background_process', {
+						proglang: $('input[name="proglang"]').val(),
+					}, function (data) {
+
+						titles = data.result;
+						abs = data.result2;
+						cancer = data.result3;
+						drug = data.result4;
+						thera = data.result5;
+						study = data.result6;
+						console.log(typeof (titles));
+						console.log("XXX=" + x);
+
+
+						console.log("Done and outside")
+						$("#result").text(titles[x]);
+						$("#result2").text(abs[x]);
+
+						document.getElementById('btn2').textContent = cancer[x]
+						document.getElementById('btn1').textContent = drug[x]
+
+						$("#btn3").text(thera[x]);
+						$("#btn4").text(study[x]);
+
+						x = x + 1;
+					});
+				return false;
+			  });
+			});
+
+
+		// 	$(document).ready(function() {
+		// 	$.ajax({
+		// 		type: "GET",
+		// 		url: "new_data.csv",
+		// 		dataType: "text",
+		// 		success: function(data) {processData(data);}
+		// 	 });
+		// });
+		//
+		//
+		// 	function processData(allText) {
+		// 		var record_num = 6;  // or however many elements there are in each row
+		// 		var allTextLines = allText.split(/\r\n|\n/);
+		// 		var entries = allTextLines[0].split(',');
+		// 		var lines = [];
+		//
+		// 		var headings = entries.splice(0,record_num);
+		// 		while (entries.length>0) {
+		// 			var tarr = [];
+		// 			for (var j=0; j<record_num; j++) {
+		// 				tarr.push(headings[j]+":"+entries.shift());
+		// 			}
+		// 			lines.push(tarr);
+		// 		}
+		// 		 alert(lines);
+		// 	}
+
+
+			</script>
+		<label for="title">Title of the paper:</label><p id=result></p>
+		<label for="abs">Abstract:<p id=result2></p>
+    </div>
+    <h3 class = "pretty_header1">Does the abstract:<br><br>
+
+            <li style="margin-left: 15px">directly describe the treatment of cancer</li>
+            <li style="margin-left: 15px">not the impact on side effects or</li>
+            <li style="margin-left: 15px">the risk of developing cancer?</li><br>
+			<form>
+				<div id="test">
+				<INPUT TYPE = "radio" name = "q" value = "yes"> Yes<br>
+				<INPUT TYPE = "radio" name = "q" value = "no">No<br><br>
+				</div>
+				<div id = "myform" hidden>
+
+					<span class="papercard">
+                        Drug: <input type = "text" name = "Drug" id="drug_id"><br>
+						Suggestion: <button class="button" type="button" id="btn1" onclick="set_text1()">Suggested Drug</button><br>
+					<br>
+					Cancer: <input type = "cancer" name = "cancer" id="cancer_id"><br>
+					Suggestion: <button class="button"  type="button" id="btn2" onclick="set_text2()">Suggested Cancer</button><br>
+
+					Therapeutic Association:
+                    <select style="margin-top: 20px" id="ther">
+					<option value="Effective">Effective</option>
+					<option value="Detrimental">Detrimental</option>
+					<option value="No Effect">No Effect</option>
+					<option value="Inconclusive">Inconclusive</option>
+				    </select><br><p id="btn3">This is a small example excerpt.</p><br><br>
+
+
+					Study Type: <select id="study">
+					<option value="pre-clinical in-vivo">pre-clinical in-vivo</option>
+					<option value="pre-clinical in-vitro">pre-clinical in-vitro</option>
+					<option value="clinical trial">clinical trial</option>
+					<option value="case report">case report</option>
+				    </select><br><p id="'btn4">Smart Excerpt: This is a small example excerpt.</p><br>
+                    <br>
+						<input type="button" value="Confirm" onclick="submit_message()">
+                    </span>
+
+				</div>
+				<script>
+				document.getElementById("myform").style.display = 'none'
+				document.getElementById('test').onclick = function() {
+				if( document.getElementsByName('q')[0].checked)
+					{
+						document.getElementById("myform").style.display = 'block'
+					} else {
+						document.getElementById("myform").style.display = 'none'
+					}
+					}
+
+					function set_text1() {
+
+
+
+				var x = document.getElementById("btn1").textContent;
+
+  		 		document.getElementById("drug_id").value = x;
+
+
+			    };
+
+			    function set_text2() {
+
+
+
+				var x = document.getElementById("btn2").textContent;
+
+  		 		document.getElementById("cancer_id").value = x;
+
+
+			    };
+
+			    function submit_message() {
+
+				console.log("Submit Message button ")
+
+			    var drug_name = document.getElementById("drug_id");
+			    var cancer_name = document.getElementById("cancer_id");
+			    var e = document.getElementById("ther");
+			    var thera_name = e.options[e.selectedIndex].value;
+			    var e2 = document.getElementById("study");
+			    var study_name = e2.options[e2.selectedIndex].value;
+
+			    var entry = {
+			      drugname: drug_name.value,
+			      cancername: cancer_name.value,
+			      theraname: thera_name,
+			      studyname: study_name
+
+			    };
+
+			    fetch(`/test_data`, {
+			      method: "POST",
+			      credentials: "include",
+			      body: JSON.stringify(entry),
+			      cache: "no-cache",
+			      headers: new Headers({
+			        "content-type": "application/json"
+			      })
+			    })
+			      .then(function (response) {
+			        if (response.status !== 200) {
+			          console.log(`Looks like there was a problem. Status code: ${response.status}`);
+			          return;
+			        }
+			        response.json().then(function (data) {
+			          console.log(data);
+			        });
+			      })
+			      .catch(function (error) {
+			        console.log("Fetch error: " + error);
+			      });
+
+  				}
+				</script>
+
+                <br>
+				<form>
+				<a href=# id=process_input><button class='btn btn-default' style="margin-left: 45%">Show next paper</button></a>
+			</form>
+			</form>
+
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
