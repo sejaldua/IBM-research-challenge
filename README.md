@@ -17,14 +17,43 @@ There are many studies published on the utilization of generic drugs for cancer 
 
 We created a machine learning powered interface for annotating scientific abstracts. It uses suggestions as it guides the user through the annotation process - the user may not have a biomedical background. Often patient families are eager to help - and more than getting the work done, we make people feel empowered, not so helpless, in the most difficult period of their lives.
 
-This terrific impact is powered by an architecture relying on `AllenNLP` and `SciSpacy` for the bulk of the work - a question answering model trained with ELMO provides excellent automatic annotations for cancer and drugs. `SciSpacy` as a prelayer that increased the quality of our results.
+This terrific impact is powered by an architecture relying on `AllenNLP` and `SciSpacy` for the bulk of the work - a question answering model trained with ELMo provides excellent automatic annotations for cancer and drugs. `SciSpacy` as a prelayer that increased the quality of our results.
 
 
-## Engineering Design Process
-#### Design
+## Design
 ![design UI](images/design_ui.png)
 
-#### Pipeline
+## Summary of Methods
+This project involves breaking down overwhelmingly technical text into information that can be used to identify promising cancer research directions. Therefore, when implementing the machine learning model to aid the user in labeling / annotating the data, our first priority was to create something that does not require for them to read the full abstract or even to have any clue as to what the abstract is communicating from a biomedical research perspective. For this reason, we wanted to make the user's sole job to evaluate and improve our machine learning model.
+
+Since a user interface in a very simple development environment and a limited amount of time does not allow for machine learning models to be trained and re-trained in between user clicks of a button, we researched pre-trained models to see if we could query API(s) for our suggestive interface. 
+
+The most promising tool at our disposal was Allen NLP, which is an open-source NLP research library, built on PyTorch. They have a functionality called "Reading Comprehension." This deep learning tool allows for the input data to be in the form of question and the output data to be in the form of an answer (or answer choice in the case that multiple options are specified). We used Allen NLP as an API towards which to query and used the output from their pre-trained ELMo-BiDaF models as suggested answers for the user.
+
+For each annotation label category, we engineered the input and output specifications by testing which types of query strings return most accurate results when compared against the labeled data given for this project. Below, we have provided a summary of how each model works in the context of our working demonstration.
+
+**DRUG**: 
+
+```python
+def find_drug_name(title):
+```
+
+**CANCER**:
+```python
+def identify_cancer(title, abstract):
+```
+
+**THERAPEUTIC ASSOCIATION**:
+```python
+def association_hint(passage):
+```
+
+**STUDY TYPE**:
+```python
+def classify_study_type(text):
+```
+
+## Pipeline
 ![pipeline diagram](images/pipeline_diagram.png)
 
 ## Languages, Packages, and Technologies
@@ -40,8 +69,6 @@ This terrific impact is powered by an architecture relying on `AllenNLP` and `Sc
 * Heroku
 * Allen NLP
 * Scispacy / spacy
-
-## Summary of Methods
 
 ## Bonus Challenge
 * **Goal**: Use paper abstracts to classify them as directly relevant and non-relevant to cancer research
