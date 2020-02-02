@@ -28,7 +28,7 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * sci-kit learn
 * regex
 * nltk
-* HTMl
+* HTML
 * CSS
 * Javascript / jquery
 * Heroku
