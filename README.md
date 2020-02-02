@@ -12,7 +12,7 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * Smruthi Ramesh [Northeastern University]
 * Sulbha Aggarwal [Queens College (CUNY)]
 
-![fun with the team](images/team.jpg)
+![fun with the team](images/team.jpg =100x100)
 
 ## Introduction
 There are many studies published on the utilization of generic drugs for cancer treatment. Analyzing this data is a huge challenge for automation, with little profit incentive, which is why Cures for Cancer within Reach is taking this on.
