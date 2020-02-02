@@ -5,7 +5,7 @@ TechTogether Boston 2020
 An NLP-powered, user-facing annotation tool to identify promising generic drugs for cancer treatment. 
 
 ## The Team
-* Ashvini Vahatharaj [Worcester Polytechnic Institute]
+* Ashvini Varatharaj [Worcester Polytechnic Institute]
 * Anastasia Spangler [Bellevue College]
 * Sejal Dua [Tufts University]
 * Smruthi Ramesh [Northeastern University]
@@ -23,12 +23,12 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 
 ## Languages, Packages, and Technologies
 * Python
-* flask
-* jupyter notebook
+* Flask
+* Jupyter notebook
 * sci-kit learn
 * regex
 * nltk
-* HTMl
+* HTML
 * CSS
 * Javascript / jquery
 * Heroku
@@ -37,6 +37,18 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 
 ## Summary of Methods
 
+## Bonus Challenge
+* Goal: Use paper abstracts to classify them as directly relevant and non-relevant to cancer research
+* Preprocessing: Cleaned up non-ascii characters resulting from footnotes and table links using regular expressions
+* Features: Bag of words with stopwords removed (including domain relevant terms like measurements and acronyms)
+  * Added part of speech tags onto the feature to provide more context
+* Values: Word counts with a maximum per document limit to prevent common domain terms like "patient" that don't help with classification
+  * Plan to move to tfIdf once there is more data
+* Models: Logistic Regression and Support Vector Classifier trained with leave-one-out cross-validation due to small data size
+* Accuracy: 73% for Logistic Regression and 74% for Support Vector Classifier
+* Interesting Indicators:
+  * Exclude: tolerated, safe
+  * Include: demonstrated, potent, antitumor
 
 ## The Model in Action
 ![Demo 1](demos/working_demo1.gif)
