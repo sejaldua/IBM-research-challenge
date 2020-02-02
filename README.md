@@ -23,8 +23,8 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 
 ## Languages, Packages, and Technologies
 * Python
-* flask
-* jupyter notebook
+* Flask
+* Jupyter notebook
 * sci-kit learn
 * regex
 * nltk
