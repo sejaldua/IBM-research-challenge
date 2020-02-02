@@ -17,7 +17,6 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 #### Initial Approach
 
 
-
 ## Pipeline
 
 
@@ -51,12 +50,14 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
   * Include: demonstrated, potent, antitumor
 
 ## The Model in Action
-![Demo 1](demos/working_demo1.gif)
+![Demo 1](demos/working_demo.gif)
 
-![Demo 2](demos/working_demo2.gif)
+![Demo 2](demos/working_demo1.gif)
 
 ## Future Directions
-* offer a textbook for the user to paste a scientific abstract from PubMed
+* offer a text box for the user to paste a scientific abstract from PubMed
+* include 3-5 suggestions for the user to select from instead of just 1
+* if the hint is not relevant for therapeutic association, give the user the option to highlight relevant text and give their confidence
 * color code the confidence values of network predictions 
 * hover over biomedical jargon for simplified definition (e.g. apoptosis --> cell death)
 * underline keywords to draw attention to themes that help inform the reader to answer the questions
@@ -65,4 +66,4 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * be able to handle more complex therapeutic association classification than just binary (e.g. effective, no effect, inconclusive, detrimental)
 * evaluate success of machine learning models with user input
 * spend more time on bonus problem using neural net / `tdidf`
-
+* use mongoDB for storing user input at large scalability
