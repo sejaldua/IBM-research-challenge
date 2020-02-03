@@ -40,7 +40,7 @@ For each annotation label category, we engineered the input and output specifica
 def find_drug_name(title):
 ```
 `AllenNLP` input: title  
-query string: "What is the drug name?"  
+query string: *"What is the drug name?"*  
 `AllenNLP` output: suggested drug name
 
 ### CANCER
@@ -51,7 +51,7 @@ def identify_cancer(title, abstract):
 `Spacy` input: title  
 `Spacy` extracts any spans which might be an entity in UMLS, a large biomedical database.  
 `Spacy` output: a list [x, y, z, ...] of title entities that may be of biomedical relevance  
-query string: "Of [x, y, z, ...] (biomedical terms that appear in the title), which is a cancer?  
+query string: *"Of [x, y, z, ...] (biomedical terms that appear in the title), which is a cancer?"*  
 `AllenNLP` input: abstract and query string  
 `AllenNLP` output: suggested cancer type 
 
@@ -61,7 +61,7 @@ def association_hint(passage):
 ```
 
 `AllenNLP` input: abstract  
-query string: "What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"  
+query string: *"What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"*
 `AllenNLP` output: hint for therapeutic association type, where the hint may be a subsection of the passage that contains the answer to the question, thus simplifying the task for the user
 
 ### STUDY TYPE
@@ -69,6 +69,11 @@ query string: "What was the impact of the drug on the cancer: effective, detrime
 def classify_study_type(text):
 ```
 For this classification problem, we used a heuristic based on related keywords. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest that the study might be in-vivo or in-vitro. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The firt heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
+
+`AllenNLP` input: abstract
+query string: *"Is it vitro, vivo or both?"*  
+`AllenNLP` output: either an answer matching *vitro*, *vivo* or *both* OR a subportion of the text that may help a human answer the question  
+the function then extracts the `AllenNLP` output for the words *vitro* or *vivo* and returns the suggestion to the user
 
 
 ## Pipeline
@@ -115,8 +120,8 @@ For this classification problem, we used a heuristic based on related keywords. 
 python start.py
 ```
 NOTES:  
-wait for local host IP and port to print to Terminal
-wait for debugger mode to become live
+wait for local host IP and port to print to Terminal  
+wait for debugger mode to become live  
 then open up local host in browser
 
 ## The Model in Action
