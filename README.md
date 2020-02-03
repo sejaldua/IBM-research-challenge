@@ -34,7 +34,7 @@ The most promising tool at our disposal was Allen NLP, which is an open-source N
 
 For each annotation label category, we engineered the input and output specifications by testing which types of query strings return most accurate results when compared against the labeled data given for this project. Below, we have provided a summary of how each model works in the context of our working demonstration.
 
-**DRUG**: 
+### DRUG
 
 ```python
 def find_drug_name(title):
@@ -43,7 +43,7 @@ def find_drug_name(title):
 query string: "What is the drug name?"  
 `AllenNLP` output: suggested drug name
 
-**CANCER**:
+### CANCER
 ```python
 def identify_cancer(title, abstract):
 ```
@@ -55,7 +55,7 @@ query string: "Of [x, y, z, ...] (biomedical terms that appear in the title), wh
 `AllenNLP` input: abstract and query string  
 `AllenNLP` output: suggested cancer type 
 
-**THERAPEUTIC ASSOCIATION**:
+### THERAPEUTIC ASSOCIATION
 ```python
 def association_hint(passage):
 ```
@@ -64,10 +64,11 @@ def association_hint(passage):
 query string: "What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"  
 `AllenNLP` output: hint for therapeutic association type, where the hint may be a subsection of the passage that contains the answer to the question, thus simplifying the task for the user
 
-**STUDY TYPE**:
+### STUDY TYPE
 ```python
 def classify_study_type(text):
 ```
+For this classification problem, we used a heuristic based on related keywords. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest that the study might be in-vivo or in-vitro. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The firt heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
 
 
 ## Pipeline
@@ -109,6 +110,15 @@ def classify_study_type(text):
   * Exclude: tolerated, safe
   * Include: demonstrated, potent, antitumor
 
+## Usage
+```
+python start.py
+```
+NOTES:  
+wait for local host IP and port to print to Terminal
+wait for debugger mode to become live
+then open up local host in browser
+
 ## The Model in Action
 ![Demo 1](demos/working_demo1.gif)
 
@@ -127,3 +137,10 @@ def classify_study_type(text):
 * evaluate success of machine learning models with user input
 * spend more time on bonus problem using neural net / `tdidf`
 * use mongoDB for storing user input at large scalability
+
+## Awards
+IBM: Drug Repurposing for Cancer - A Data Driven Approach  
+Dell Technologies: Best Hack for Driving Human Progress  
+
+## Acknowledgments
+Thank you to all the volunteers, mentors, sponsors, judges, and fellow hackers at TechTogether Boston 2020 for giving us inspiration and endless support. It was truly an incredible experience.
