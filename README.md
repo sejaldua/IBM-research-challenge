@@ -57,18 +57,18 @@ def classify_study_type(text):
 ![pipeline diagram](images/pipeline_diagram.png)
 
 ## Languages, Packages, and Technologies
-* Python
-* Flask
-* Jupyter notebook
-* sci-kit learn
-* regex
-* nltk
-* HTML
-* CSS
-* Javascript / jquery
-* Heroku
-* Allen NLP
-* Scispacy / spacy
+• Python: For Back end and Natural Language Processing
+• Flask: To combine front end with back end
+• Jupyter notebook: For initial testing and development
+• sci-kit learn: For training machine learning-based text classifiers
+• Regular expression(regex): To clean the data set, for non-ASCII character set
+• Natural Language Toolkit(NLTK): Text processing for classification models 
+• HTML/CSS: UX/UI design
+• Javascript / jquery: For validations in HTML/CSS 
+• Heroku: Hosting server 
+• Allen NLP: Framework used for Natural Language processing
+• Scispacy / spacy: Used to build information extraction and Natural language processing system and pre-process text for deep learning. 
+
 
 ## Bonus Challenge
 * **Goal**: Use paper abstracts to classify them as directly relevant and non-relevant to cancer research
