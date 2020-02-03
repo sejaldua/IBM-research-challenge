@@ -70,7 +70,7 @@ def classify_study_type(text):
 ```
 For this classification problem, we used a heuristic based on related keywords. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest that the study might be in-vivo or in-vitro. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The firt heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
 
-`AllenNLP` input: abstract
+`AllenNLP` input: abstract  
 query string: *"Is it vitro, vivo or both?"*  
 `AllenNLP` output: either an answer matching *vitro*, *vivo* or *both* OR a subportion of the text that may help a human answer the question  
 the function then extracts the `AllenNLP` output for the words *vitro* or *vivo* and returns the suggestion to the user
