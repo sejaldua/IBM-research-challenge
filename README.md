@@ -6,11 +6,11 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 ![logo](images/logo.png)
 
 ## Developers and Researchers
-* Ashvini Varatharaj [Worcester Polytechnic Institute]
-* Anastasia Spangler [Bellevue College]
-* Sejal Dua [Tufts University]
+* [Ashvini Varatharaj](https://github.com/ash13) [Worcester Polytechnic Institute]
+* [Anastasia Spangler](https://github.com/charcalope) [Bellevue College]
+* [Sejal Dua](https://github.com/sejaldua) [Tufts University]
 * [Smruthi Ramesh](https://github.com/smruthiramesh) [Northeastern University]
-* Sulbha Aggarwal [Queens College (CUNY)]
+* [Sulbha Aggarwal](https://github.com/SulbhaAgg) [Queens College (CUNY)]
 
 ![team](images/whole_team.jpg)
 
@@ -74,7 +74,7 @@ query string: *"What was the impact of the drug on the cancer: effective, detrim
 ```python
 def classify_study_type(text):
 ```
-For this classification problem, we layered a heuristic model on top of the Allen NLP model in order to better gear the classifier to suit biomedical questions. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest what category the study might fall into. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The first heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. The min threshold of 3 counts was chosen so that we would not mistakenly classify the document based on sentences about previous studies on the same drug, which proved to be a fairly common occurrence. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
+For this classification problem, we layered a heuristic model on top of the Allen NLP model in order to better gear the classifier to suit biomedical questions. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest what category the study might fall into. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The first heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidences. The min threshold of 3 counts was chosen so that we would not mistakenly classify the document based on sentences about previous studies, which proved to be a fairly common occurrence. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
 
 `AllenNLP` input: abstract  
 query string: *"Is it vitro, vivo or both?"*  
