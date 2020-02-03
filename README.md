@@ -75,7 +75,6 @@ query string: *"Is it vitro, vivo or both?"*
 `AllenNLP` output: either an answer matching *vitro*, *vivo* or *both* OR a subportion of the text that may help a human answer the question  
 the function then extracts the `AllenNLP` output for the words *vitro* or *vivo* and returns the suggestion to the user
 
-
 ## Pipeline
 ![pipeline diagram](images/pipeline_diagram.png)
 
