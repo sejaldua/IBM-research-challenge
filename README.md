@@ -12,7 +12,7 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * Smruthi Ramesh [Northeastern University]
 * Sulbha Aggarwal [Queens College (CUNY)]
 
-<img src="images/whole_team.jpg" alt="team" width="300" height="200/>
+![team](images/whole_team.jpg)
 
 ## Introduction
 There are many studies published on the utilization of generic drugs for cancer treatment. Analyzing this data is a huge challenge for automation, with little profit incentive, which is why Cures for Cancer within Reach is taking this on.
@@ -39,11 +39,16 @@ For each annotation label category, we engineered the input and output specifica
 ```python
 def find_drug_name(title):
 ```
+input: title
+query string: "What is the drug name?"
+output: suggested drug name
 
 **CANCER**:
 ```python
 def identify_cancer(title, abstract):
 ```
+input: title and abstract
+query string: 
 
 **THERAPEUTIC ASSOCIATION**:
 ```python
