@@ -5,7 +5,7 @@ TechTogether Boston 2020
 An NLP-powered, user-facing annotation tool to identify promising generic drugs for cancer treatment. 
 ![logo](images/logo.png)
 
-## The Team
+## Developers and Researchers
 * Ashvini Varatharaj [Worcester Polytechnic Institute]
 * Anastasia Spangler [Bellevue College]
 * Sejal Dua [Tufts University]
