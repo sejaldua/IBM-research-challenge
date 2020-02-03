@@ -61,7 +61,7 @@ def association_hint(passage):
 ```
 
 `AllenNLP` input: abstract  
-query string: *"What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"*
+query string: *"What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"*  
 `AllenNLP` output: hint for therapeutic association type, where the hint may be a subsection of the passage that contains the answer to the question, thus simplifying the task for the user
 
 ### STUDY TYPE
