@@ -9,30 +9,36 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * Ashvini Varatharaj [Worcester Polytechnic Institute]
 * Anastasia Spangler [Bellevue College]
 * Sejal Dua [Tufts University]
-* Smruthi Ramesh [Northeastern University]
+* [Smruthi Ramesh](https://github.com/smruthiramesh) [Northeastern University]
 * Sulbha Aggarwal [Queens College (CUNY)]
 
 ![team](images/whole_team.jpg)
 
 ## Introduction
-There are many studies published on the utilization of generic drugs for cancer treatment. Analyzing this data is a huge challenge for automation, with little profit incentive, which is why Cures for Cancer within Reach is taking this on.
+There are many studies published on the utilization of generic drugs for cancer treatment. Analyzing this data is a huge challenge for automation, with little profit incentive, which is why Cures for Cancer within Reach is taking on this challenge.
 
-We created a machine learning powered interface for annotating scientific abstracts. It uses suggestions as it guides the user through the annotation process - the user may not have a biomedical background. Often patient families are eager to help - and more than getting the work done, we make people feel empowered, not so helpless, in the most difficult period of their lives.
+Patients and their families are often eager to help with cancer research - and we'd like to help them feel empowered during an otherwise difficult period of time in their lives. With this in mind, we created a machine learning powered interface for annotating scientific abstracts. It uses suggestions to help guide a typical user -who may not have a biomedical background, through the annotation process.
 
-This terrific impact is powered by an architecture relying on `AllenNLP` and `SciSpacy` for the bulk of the work - a question answering model trained with ELMo provides excellent automatic annotations for cancer and drugs. `SciSpacy` as a prelayer that increased the quality of our results.
+This terrific impact is powered by an architecture relying on `AllenNLP` and `SciSpacy` for the bulk of the work - a question-answering model trained with ELMo provides excellent automatic annotations for cancer and drugs. `SciSpacy` is used as an added layer to increase the quality of our results.
 
 
 ## Design
 ![design UI](images/design_ui.png)
 
 ## Summary of Methods
-This project involves breaking down overwhelmingly technical text into information that can be used to identify promising cancer research directions. Therefore, when implementing the machine learning model to aid the user in labeling / annotating the data, our first priority was to create something that does not require for them to read the full abstract or even to have any clue as to what the abstract is communicating from a biomedical research perspective. For this reason, we wanted to make the user's sole job to evaluate and improve our machine learning model.
+This project involves breaking down overwhelmingly technical text into information that can be used to identify promising cancer research directions. Therefore, when implementing the machine learning model to aid the user in labeling / annotating the data, our first priority was to create something that does not require for them to read the full abstract or parse through its complex biomedical jargon. We aimed to make it the user's sole job to evaluate and improve our machine learning model.
 
-Since a user interface in a very simple development environment and a limited amount of time does not allow for machine learning models to be trained and re-trained in between user clicks of a button, we researched pre-trained models to see if we could query API(s) for our suggestive interface. 
+Since our simple development environment and a limited time-frame did not allow for machine learning models to be re-trained on the fly, we researched pre-trained models to see if we could query API(s) for our suggestive interface. 
 
-The most promising tool at our disposal was [Allen NLP](https://demo.allennlp.org/reading-comprehension), which is an open-source NLP research library, built on PyTorch. They have a functionality called "Reading Comprehension." This deep learning tool allows for the input data to be in the form of question and the output data to be in the form of an answer (or answer choice in the case that multiple options are specified). We used Allen NLP as an API towards which to query and used the output from their pre-trained ELMo-BiDaF models as suggested answers for the user.
+The most promising tool at our disposal was [Allen NLP](https://demo.allennlp.org/reading-comprehension), which is an open-source NLP research library, built on PyTorch. They have a functionality called "Reading Comprehension." This deep learning tool allows for the input data to be in the form of question and the output data to be in the form of an answer (or answer choice in the case of multiple-choice questions). We used Allen NLP as an API that we direct queries to, and used the output from the pre-trained ELMo-BiDaF models as suggested answers for the user.
 
-For each annotation label category, we engineered the input and output specifications by testing which types of query strings return most accurate results when compared against the labeled data given for this project. Below, we have provided a summary of how each model works in the context of our working demonstration.
+Our goal was to obtain the following four annotations from the user for any given abstract:
+- Drug: What generic drug has been tested?
+- Cancer: What type of cancer was it tested on?
+- Therapeutic Association: How does the generic drug influence cancer? 
+- Study Type: Which type of experiment was performed?
+
+For each annotation category, we engineered the input and output specifications by testing which types of query strings return most accurate results when compared against the labeled data for this project. Below, we have provided a summary of how each model works in the context of our working demonstration.
 
 ### DRUG
 
@@ -68,7 +74,7 @@ query string: *"What was the impact of the drug on the cancer: effective, detrim
 ```python
 def classify_study_type(text):
 ```
-For this classification problem, we used a heuristic based on related keywords. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest that the study might be in-vivo or in-vitro. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The firt heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
+For this classification problem, we layered a heuristic model on top of the Allen NLP model in order to better gear the classifier to suit biomedical questions. When trying to discern whether the study was in-vivo or in-vitro, we looked at the frequency of words that strongly suggest what category the study might fall into. For in-vivo studies, the list of associated words was `[vivo, rats, rat, mouse, mice, animal]`. Due to lack of domain expertise, it was difficult to come up with a list of words that could indicate that the study is in vitro, so the only word that was counted was `[vitro`]. The firt heuristic we looked at was the frequency of the words related to each type of study. If the frequencies were some non-zero number to zero, the function should suggest to the user the study type with a non-zero number of occurrences in the abstract. Secondly, if the difference between the frequency of words related to one study type was greater than the frequency of words related to the other study type by 3 or more, the discrepancy was deemed distinct enough to suggest the study type with more related word incidinces. The threshold of 3 counts was chosen so that we would not mistakenly classify the document based on sentences about previous studies on the same drug, which proved to be a fairly common occurrence. In the event that the frequencies were both non-zero and comparable in magnitude, the abstract was fed into `AllenNLP`.
 
 `AllenNLP` input: abstract  
 query string: *"Is it vitro, vivo or both?"*  
