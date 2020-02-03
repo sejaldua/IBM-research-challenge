@@ -12,6 +12,8 @@ An NLP-powered, user-facing annotation tool to identify promising generic drugs 
 * Smruthi Ramesh [Northeastern University]
 * Sulbha Aggarwal [Queens College (CUNY)]
 
+<img src="whole_team.jpg" alt="team" width="300" height="200/>
+
 ## Introduction
 There are many studies published on the utilization of generic drugs for cancer treatment. Analyzing this data is a huge challenge for automation, with little profit incentive, which is why Cures for Cancer within Reach is taking this on.
 
@@ -57,28 +59,17 @@ def classify_study_type(text):
 ![pipeline diagram](images/pipeline_diagram.png)
 
 ## Languages, Packages, and Technologies
-• **`Python`**: For Back end and Natural Language Processing
-
-• **`Flask`**: To combine front end with back end
-
-• **`Jupyter Notebook`**: For initial testing and development
-
-• **`sci-kit learn`**: For training machine learning-based text classifiers
-
-• **`Regex (regular expression)`**: To clean the data set, for non-ASCII character set
-
-• **`NLTK (Natural Language Toolkit)`**: Text processing for classification models 
-
+• **`Python`**: back end and Natural Language Processing
+• **`Flask`**: integrate front end with back end
+• **`Jupyter Notebook`**: testing, exploratory data analysis, and development
+• **`sci-kit learn`**: training machine learning-based text classifiers
+• **`Regex (regular expression)`**: clean data set, eliminating non-ASCII character set
+• **`NLTK (Natural Language Toolkit)`**: text processing for classification models 
 • **`HTML/CSS`**: UX/UI design
-
-• **`Javascript / jquery`**: For validations in HTML/CSS 
-
-• **`Heroku`**: Hosting server 
-
-• **`Allen NLP`**: Framework used for Natural Language processing
-
-• **Scispacy / spacy**: Used to build information extraction and Natural language processing system and pre-process text for deep learning. 
-
+• **`Javascript / jquery`**: validations and dynamic elements in HTML/CSS 
+• **`Heroku`**: hosting server
+• **`AllenNLP`**: framework used for Natural Language processing
+• **`Scispacy` / `spacy`**: used to extract biomedical terms and pre-process text for deep learning. 
 
 ## Bonus Challenge
 * **Goal**: Use paper abstracts to classify them as directly relevant and non-relevant to cancer research
