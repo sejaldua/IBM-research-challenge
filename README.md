@@ -39,26 +39,45 @@ For each annotation label category, we engineered the input and output specifica
 ```python
 def find_drug_name(title):
 ```
-input: title
+`AllenNLP` input: title
+
 query string: "What is the drug name?"
-output: suggested drug name
+
+`AllenNLP` output: suggested drug name
 
 **CANCER**:
 ```python
 def identify_cancer(title, abstract):
 ```
-input: title and abstract
-query string: 
+
+`Spacy` input: title
+
+`Spacy` extracts any spans which might be an entity in UMLS, a large biomedical database.
+
+`Spacy` output: a list [x, y, z, ...] of title entities that may be of biomedical relevance
+
+query string: "Of [x, y, z, ...] (biomedical terms that appear in the title), which is a cancer?
+
+`AllenNLP` input: abstract and query string
+
+`AllenNLP` return: suggested cancer type 
 
 **THERAPEUTIC ASSOCIATION**:
 ```python
 def association_hint(passage):
 ```
 
+`AllenNLP` input: abstract
+
+query string: "What was the impact of the drug on the cancer: effective, detrimental, no effect, or were the results inconclusive?"
+
+`AllenNLP` output: hint for therapeutic association type, where the hint may be a subsection of the passage that contains the answer to the question, thus simplifying the task for the user
+
 **STUDY TYPE**:
 ```python
 def classify_study_type(text):
 ```
+
 
 ## Pipeline
 ![pipeline diagram](images/pipeline_diagram.png)
