@@ -1,5 +1,5 @@
 # IBM-research-challenge
-TechTogether Boston 2020
+TechTogether Boston 2020- https://docs.google.com/presentation/d/1JyEM4UXEAc66kzIEclsmNWEYlVZgsacnY0QrHxs4GCI/edit?usp=sharing (Description avaliable here)
 
 ## About
 An NLP-powered, user-facing annotation tool to identify promising generic drugs for cancer treatment. 
